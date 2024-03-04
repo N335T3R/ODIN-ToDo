@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
 
     <script src="script.js" defer></script>
     <title>ODIN TO-DO WEBAPP</title>
@@ -10,22 +13,31 @@
 
 
 <body>
-    <div id="inputContainer" class="inputContainer">
-        <form id="form">
-            <label for="title">Item Title: </label>
-            <input type="text" id="title" name="title"><br>
-    
-            <label for="dueDate">DueDate (mm-dd-yyyy): </label>
-            <input type="text" id="dueDate" name="dueDate"><br>
-    
-            <label for="details">Short Description: </label>
-            <input type="text" id="details" name="details"><br>
-    
-            <label for="priority">Priority (low/medium/high/none): </label>
-            <input type="text" id="priority" name="priority"><br>
-    
-            <input type="submit" value="submit">
-        </form>
+    <header id="header">
+        <h2 id="toDo" class="toDo">To-Do List</h2>
+        <button id="addBtn" class="addBtn">&#43;</button>
+    </header>
+
+
+    <div id="content" class="content">
+        <div id="inputContainer" class="inputContainer">
+            <form id="form">
+                <label for="title">Item Title: </label>
+                <input type="text" id="title" name="title"><br>
+        
+                <label for="dueDate">DueDate (mm-dd-yyyy): </label>
+                <input type="text" id="dueDate" name="dueDate"><br>
+        
+                <label for="details">Short Description: </label>
+                <input type="text" id="details" name="details"><br>
+        
+                <label for="priority">Priority (low/medium/high/none): </label>
+                <input type="text" id="priority" name="priority"><br>
+        
+                <input type="submit" value="submit">
+            </form>
+        </div>
     </div>
+    
 </body>
 </html>

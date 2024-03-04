@@ -1,17 +1,91 @@
 *, *::after, *::before {
-    margin: none;
+    margin: 0;
     user-select: none;
     box-sizing: border-box;
 }
 
 :root {
-    --night: rgba(17, 17, 17, 1);
-    --cambridge: rgb(115, 174, 135);
-    --amber: rgb(225, 191, 0);
-    --platinum: rgb(229, 228, 226);
-    --moonglow: rgb(182, 205, 209);
+    --night: #222;
+    --wine: rgb(127, 55, 69);
+    --sienna: rgb(135,42,10);
+    --vanilla: rgb(222, 222, 130);
+    --naplesY: rgb(240, 210, 76);
+
+    --chiliRed: rgb(227, 23, 10);
+    --statusGreen: rgb(9, 227, 45);
+    --madimi: "Madimi One";
 }
 
+/* FONTS */
+@font-face {
+    font-family: pacifico;
+    src: url(/src/assets/fonts/Pacifico-Regular.ttf);
+}
+
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 body {
-    background-color: var(--night);
+    display: block;
+    /* background-color: var(--vanilla); */
+}
+button {
+    text-decoration: none;
+    outline: none;
+    color: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+label {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 0.25rem;
+}
+input {
+    margin-bottom: 0.5rem;
+}
+
+header {
+    display: flex;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    border-radius: 0 0 0.25rem 0.25rem;
+
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--wine);
+}
+.toDo {
+    font-family: pacifico;
+    font-size: 1.5rem;
+    color: var(--vanilla);
+}
+.addBtn {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    line-height: 50%;
+    padding-bottom: 0.5rem;
+
+    font-family: pacifico;
+    font-size: 2rem;
+    color: var(--vanilla);
+}
+.addBtn:hover {
+    background-color: var(--vanilla);
+    color: var(--wine);
+    opacity: 0.75rem;
+    box-shadow: 0.15rem 0.15rem 0.25rem 0.1rem var(--night);
+}
+
+.inputContainer {
+    max-width: 15rem;
+    max-height: 20rem;
+    border-radius: 0.15rem;
+
+    padding: 1rem;
+    background-color: var(--naplesY);
 }
