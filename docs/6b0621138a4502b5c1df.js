@@ -1,0 +1,1 @@
+import Item from"./classes/item";import storeData from"./utils/formDataUtils";import{extractData}from"./utils/formDataUtils";const form=document.getElementById("form"),userItems=[];form.addEventListener("submit",(t=>{t.preventDefault(),storeData(),userItems.push(extractData()),console.log(userItems)}));

@@ -13,5 +13,5 @@
 }
 
 body {
-    background-color: #111;
+    background-color: var(--night);
 }
