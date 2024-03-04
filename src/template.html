@@ -20,22 +20,30 @@
 
 
     <div id="content" class="content">
-        <div id="inputContainer" class="inputContainer">
-            <form id="form">
-                <label for="title">Item Title: </label>
-                <input type="text" id="title" name="title"><br>
-        
-                <label for="dueDate">DueDate (mm-dd-yyyy): </label>
-                <input type="text" id="dueDate" name="dueDate"><br>
-        
-                <label for="details">Short Description: </label>
-                <input type="text" id="details" name="details"><br>
-        
-                <label for="priority">Priority (low/medium/high/none): </label>
-                <input type="text" id="priority" name="priority"><br>
-        
-                <input type="submit" value="submit">
-            </form>
+        <div id="modal" class="modal">
+            <div id="inputContainer" class="inputContainer">
+                <button id="exitForm" class="exitForm">x</button>
+                <form id="form" class="form">
+                    <label for="title">Item Title: </label>
+                    <input type="text" id="title" name="title"><br>
+            
+                    <label for="dueDate">DueDate (mm-dd-yyyy): </label>
+                    <input type="text" id="dueDate" name="dueDate"><br>
+            
+                    <label for="details">Short Description: </label>
+                    <input type="text" id="details" name="details"><br>
+            
+                    <label for="priority">Priority (low/medium/high/none): </label>
+                    <input type="text" id="priority" name="priority"><br>
+            
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+
+        <div id="myItems" class="myItems">
+            <div id="itemsHeader" class="itemsHeader"><h2 id="items" class="items">My Items</h2></div>
+            <div id="itemsRack" class="itemsRack"></div>
         </div>
     </div>
     

@@ -81,11 +81,79 @@ header {
     box-shadow: 0.15rem 0.15rem 0.25rem 0.1rem var(--night);
 }
 
+.content {
+    padding: 1rem;
+}
+
+
+.modal {
+    display: none;
+}
+.modalOpen {
+    display: flex;
+    z-index: 1;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
 .inputContainer {
     max-width: 15rem;
     max-height: 20rem;
-    border-radius: 0.15rem;
+    border-radius: 0.45rem;
 
     padding: 1rem;
     background-color: var(--naplesY);
+}
+.form {
+    margin-top: 1rem;
+}
+.exitForm {
+    margin: 0 0 1rem 0;
+    float: right;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    color: var(--wine);
+    line-height: 50%;
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+.exitForm:hover {
+    background-color: var(--wine);
+    color: var(--vanilla);
+
+    border-radius: 50%;
+    box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem var(--night);
+}
+
+
+
+.itemsHeader {
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 0.5rem;
+    background-color: var(--sienna);
+}
+.items {
+    font-family: pacifico;
+    color: var(--vanilla);
+}
+.itemsRack {
+    background-color: sienna;
+    fill-opacity: 0.1;
+    height: 10rem;
+    width: inherit;
+    border: 1px solid var(--sienna);
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+
+.itemCard {
+    height: 8rem;
+    width: 8rem;
+    background-color: var(--vanilla);
 }
