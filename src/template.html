@@ -15,7 +15,10 @@
 <body>
     <header id="header">
         <h2 id="toDo" class="toDo">To-Do List</h2>
-        <button id="addBtn" class="addBtn">&#43;</button>
+        <div id="buttons" class="buttons">
+            <button id="addBtn" class="addBtn">new item</button>
+            <button id="addPrjct" class="addBtn">new project</button>
+        </div>
     </header>
 
 
@@ -27,24 +30,60 @@
                     <label for="title">Item Title: </label>
                     <input type="text" id="title" name="title"><br>
             
-                    <label for="dueDate">DueDate (mm-dd-yyyy): </label>
-                    <input type="text" id="dueDate" name="dueDate"><br>
+                    <label for="dueDate">Due Date: </label>
+                    <input type="date" id="dueDate" name="dueDate"><br>
+
+                    <label for="dueTime">Due Time: </label>
+                    <input type="time" id="dueTime" name="dueTime"><br>
             
                     <label for="details">Short Description: </label>
                     <input type="text" id="details" name="details"><br>
             
-                    <label for="priority">Priority (low/medium/high/none): </label>
-                    <input type="text" id="priority" name="priority"><br>
+                    <label for="priority">Priority: </label>
+                    <select id="priority" name="priority">
+                        <option value="low">low</option>
+                        <option value="medium">medium</option>
+                        <option value="high">high</option>
+                    </select>
+
+                    <label for="hostProject">Add to a project: </label>
+                    <select name="hostProject" id="hostProject"></select>
             
                     <input type="submit" value="submit">
                 </form>
             </div>
         </div>
 
-        <div id="myItems" class="myItems">
-            <div id="itemsHeader" class="itemsHeader"><h2 id="items" class="items">My Items</h2></div>
-            <div id="itemsRack" class="itemsRack"></div>
+        <div id="projectModal" class="modal">
+            <div id="prjctFormContainer" class="inputContainer">
+                <button id="exitPrjctForm" class="exitForm">x</button>
+                <form id="projectForm" class="form">
+                    <label for="prjctTitle">Project Title: </label>
+                    <input type="text" id="prjctTitle" name="prjctTitle"><br>
+            
+                    <label for="prjctDueDate">Due Date: </label>
+                    <input type="date" id="prjctDueDate" name="prjctDueDate"><br>
+
+                    <label for="prjctDueTime">Due Time: </label>
+                    <input type="time" id="prjctDueTime" name="prjctDueTime"><br>
+            
+                    <label for="prjctDetails">Short Description: </label>
+                    <input type="text" id="prjctDetails" name="prjctDetails"><br>
+            
+                    <label for="prjctPriority">Priority: </label>
+                    <select id="prjctPriority" name="prjctPriority">
+                        <option value="low">low</option>
+                        <option value="medium">medium</option>
+                        <option value="high">high</option>
+                    </select>
+            
+                    <input type="submit" value="submit">
+                </form>
+            </div>
         </div>
+
+
+        
     </div>
     
 </body>

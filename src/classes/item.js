@@ -1,9 +1,11 @@
 export default class Item{
-    constructor({title, dueDate, details, priority}) {
+    constructor({title, dueDate, dueTime, details, priority, hostProject}) {
         this.title = title;
         this.dueDate = dueDate;
+        this.dueTime = dueTime;
         this.details = details;
         this.priority = priority;
+        this.hostProject = hostProject;
         this.due = new Date(this.dueDate);
     }
 
