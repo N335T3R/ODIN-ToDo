@@ -163,7 +163,7 @@ header {
 }
 .projects, .items, .details {
     display: block;
-    min-width: 12rem;
+    min-width: 8rem;
     max-width: 12rem;
 }
 .projectsHead, .itemsHead, .detailsHead {
@@ -211,4 +211,10 @@ header {
     padding: 0.25rem 1rem;
     font-family: var(--madimi);
     font-weight: 600;
+}
+
+.detail {
+    font-family: var(--madimi);
+    color: var(--vanilla);
+    font-size: 1rem;
 }

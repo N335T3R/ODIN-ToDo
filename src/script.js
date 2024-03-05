@@ -147,10 +147,24 @@ function popProjects() {
             itemsContent.innerHTML = ""; 
 
             for (let j = 0; j < userProjects[i].items.length; j++) {
+                const thisItem = userProjects[i].items[j];
                 const itemBtn = document.createElement('button');
                 itemBtn.classList.add('itemBtn');
                 itemBtn.textContent = userProjects[i].items[j].title;
                 itemsContent.appendChild(itemBtn);
+
+                itemBtn.addEventListener('click', () => {
+                    detailsContent.innerHTML = "";
+
+                    Object.keys(thisItem).forEach(key => {
+                        const value = thisItem[key];
+                
+                        const detail = document.createElement('p');
+                        detail.classList.add('detail');
+                        detail.textContent = `${key}: ${value}`;
+                        detailsContent.appendChild(detail);
+                    });
+                });
             }
         });
     }
