@@ -11,6 +11,7 @@ module.exports = merge(common, {
     output: {
         filename: '[name].[contentHash].bundle.js',
         path: path.resolve(__dirname, 'docs'),
+        publicPath: "/to-do"
     },
     plugins: [new MiniCssExtractPlugin({
         filename: "[name].[contentHash].css"
