@@ -6,7 +6,6 @@ export default class Item{
         this.details = details;
         this.priority = priority;
         this.hostProject = hostProject;
-        this.due = new Date(this.dueDate);
     }
 
     print() {

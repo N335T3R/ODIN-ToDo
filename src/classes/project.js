@@ -5,7 +5,6 @@ export default class Project {
         this.dueTime = dueTime;
         this.details = details;
         this.priority = priority;
-        this.due = new Date(this.dueDate);
         this.items = [];
     }
 };

@@ -109,6 +109,7 @@ projectForm.addEventListener('submit', (e) => {
         hostProject.appendChild(selection);
     }
 
+    popProjects();
     console.log(userProjects);
 });
 
@@ -118,3 +119,41 @@ projectForm.addEventListener('submit', (e) => {
 
 
 // MODIFY DOM CONTENT
+const projectsContent = document.getElementById('projectsContent');
+const itemsContent = document.getElementById('itemsContent');
+const detailsContent = document.getElementById('detailsContent');
+
+function popProjects() {
+    projectsContent.innerHTML = "";
+
+    for (let i = 0; i < userProjects.length; i++) {
+        const projectBtn = document.createElement('button');
+        projectBtn.classList.add('projectBtn');
+        projectBtn.textContent = userProjects[i].title;
+        projectsContent.appendChild(projectBtn);
+
+
+        projectBtn.addEventListener('click', () => {
+            detailsContent.innerHTML = "";
+            Object.keys(userProjects[i]).forEach(key => {
+                const value = userProjects[i][key];
+        
+                const detail = document.createElement('p');
+                detail.classList.add('detail');
+                detail.textContent = `${key}: ${value}`;
+                detailsContent.appendChild(detail);
+            });
+
+            itemsContent.innerHTML = ""; 
+
+            for (let j = 0; j < userProjects[i].items.length; j++) {
+                const itemBtn = document.createElement('button');
+                itemBtn.classList.add('itemBtn');
+                itemBtn.textContent = userProjects[i].items[j].title;
+                itemsContent.appendChild(itemBtn);
+            }
+        });
+    }
+}
+popProjects();
+
