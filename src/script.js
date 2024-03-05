@@ -99,8 +99,10 @@ projectForm.addEventListener('submit', (e) => {
     projectModal.classList.add('modal');
     projectModal.classList.remove('modalOpen');
 
-    const hostProject = document.getElementById('hostProject');
 
+    // adds Project names to form selection
+    const hostProject = document.getElementById('hostProject');
+    hostProject.innerHTML = "";
     for (let i = 0; i < userProjects.length; i++) {
         let option = userProjects[i];
         let selection = document.createElement('option');
@@ -126,13 +128,14 @@ const detailsContent = document.getElementById('detailsContent');
 function popProjects() {
     projectsContent.innerHTML = "";
 
+    // Populates Projects
     for (let i = 0; i < userProjects.length; i++) {
         const projectBtn = document.createElement('button');
         projectBtn.classList.add('projectBtn');
         projectBtn.textContent = userProjects[i].title;
         projectsContent.appendChild(projectBtn);
 
-
+        // Populates Project Details on Click
         projectBtn.addEventListener('click', () => {
             detailsContent.innerHTML = "";
             Object.keys(userProjects[i]).forEach(key => {
@@ -143,28 +146,55 @@ function popProjects() {
                 detail.textContent = `${key}: ${value}`;
                 detailsContent.appendChild(detail);
             });
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('deleteBtn');
+            deleteBtn.textContent = "delete";
+            detailsContent.appendChild(deleteBtn);
 
-            itemsContent.innerHTML = ""; 
+            deleteBtn.addEventListener('click', () => {
+                userProjects.splice(i, 1);
 
-            for (let j = 0; j < userProjects[i].items.length; j++) {
-                const thisItem = userProjects[i].items[j];
-                const itemBtn = document.createElement('button');
-                itemBtn.classList.add('itemBtn');
-                itemBtn.textContent = userProjects[i].items[j].title;
-                itemsContent.appendChild(itemBtn);
+                popProjects();
+            });
 
-                itemBtn.addEventListener('click', () => {
-                    detailsContent.innerHTML = "";
+            // Populates Project Items on click
+            popItems();
+            function popItems () {
+                itemsContent.innerHTML = ""; 
 
-                    Object.keys(thisItem).forEach(key => {
-                        const value = thisItem[key];
                 
-                        const detail = document.createElement('p');
-                        detail.classList.add('detail');
-                        detail.textContent = `${key}: ${value}`;
-                        detailsContent.appendChild(detail);
+                for (let j = 0; j < userProjects[i].items.length; j++) {
+                    const thisItem = userProjects[i].items[j];
+                    const itemBtn = document.createElement('button');
+                    itemBtn.classList.add('itemBtn');
+                    itemBtn.textContent = userProjects[i].items[j].title;
+                    itemsContent.appendChild(itemBtn);
+    
+                    // Populates Item Details on Click
+                    itemBtn.addEventListener('click', () => {
+                        detailsContent.innerHTML = "";
+    
+                        Object.keys(thisItem).forEach(key => {
+                            const value = thisItem[key];
+                    
+                            const detail = document.createElement('p');
+                            detail.classList.add('detail');
+                            detail.textContent = `${key}: ${value}`;
+                            detailsContent.appendChild(detail);
+                        });
+    
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.classList.add('deleteBtn');
+                        deleteBtn.textContent = "delete";
+                        detailsContent.appendChild(deleteBtn);
+
+                        deleteBtn.addEventListener('click', () => {
+                            userProjects[i].items.splice(j, 1);
+            
+                            popItems();
+                        });
                     });
-                });
+                }
             }
         });
     }

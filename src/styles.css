@@ -187,7 +187,6 @@ header {
 }
 .projectsContent, .itemsContent, .detailsContent {
     padding: 0 0.5rem;
-    max-height: 15rem;
     min-width: inherit;
     max-width: inherit;
     /* overflow-y: scroll; */
@@ -196,12 +195,14 @@ header {
 }
 .projectsContent {
     background-color: var(--blueberryLight);
+    border-radius: 0 0 0 0.5rem;
 }
 .itemsContent {
     background-color: var(--vanilla);
 }
 .detailsContent {
     background-color: var(--mint);
+    border-radius: 0 0 0.5rem 0;
 }
 
 .projectBtn, .itemBtn {
@@ -217,4 +218,13 @@ header {
     font-family: var(--madimi);
     color: var(--vanilla);
     font-size: 1rem;
+}
+.deleteBtn {
+    margin: 0 0 0.25rem 0;
+    height: 1.3rem;
+    width: 7rem;
+    font-size: 1rem;
+    background-color: var(--chiliRed);
+    color: var(--vanilla);
+    border-radius: 0.5rem;
 }
